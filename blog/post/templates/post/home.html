@@ -1,0 +1,26 @@
+{% extends "post/base.html" %}
+{% load static %}
+
+{% block content %}
+    <body>
+
+<h4>Hey , {{request.user}}</h4>
+Your Daily Read is here
+<br/>
+<hr>
+{% for post in pst %}
+<div class="jumbotron p-4 p-md-5 text-dark rounded bg-light">
+    <p class="lead mb-0">Article by: {{post.user}}</p>
+    <p class="text-mute">{{post.date}}</p>
+    <hr>
+    <div class="col-md-6 px-0">
+      <h6 class="display-9 font-italic"><a href = "{% url 'blog-detail' post.id %}" >{{post.title}}</a></h6>
+      <p class="lead my-3">{{post.content}}</p>
+    </div>
+  </div>
+       
+    {% endfor %}
+    
+    
+</body>
+{% endblock %}

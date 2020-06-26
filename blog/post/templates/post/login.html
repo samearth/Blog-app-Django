@@ -1,0 +1,33 @@
+
+<html>
+    <style>
+         div {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+    </style>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<div>
+
+    LOGIN
+</h1>
+<form method = "POST" action="">
+    {% csrf_token %}
+    Username: <input type="text" name="username" placeholder="username"><br/>
+    Password: <input type="password" name="password" placeholder="ups"><br/><br/>
+    <input type="submit" class="btn btn-outline-secondary btn-lg" role="button" value="Login"> </a>
+    <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg " role="button" > Signup </a></br>
+</form>
+
+{% for m in messages %}
+{% endfor %}
+</div>
+</html>
